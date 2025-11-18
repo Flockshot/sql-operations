@@ -12,10 +12,10 @@ Implemented a fully functional relational database in Oracle DBMS and developed 
 
 This project demonstrates the full-cycle implementation of a database, from conceptual design to practical, high-performance querying. The work is split into two key areas:
 
-1.  **Database Implementation:** Creating a database schema from scratch using SQL DDL, enforcing constraints, and populating it with data (DML). [cite_start]This was done for the "NCCCloud" cloud gaming service[cite: 19].
+1.  **Database Implementation:** Creating a database schema from scratch using SQL DDL, enforcing constraints, and populating it with data (DML). This was done for the "NCCCloud" cloud gaming service.
 2.  **Advanced Querying:** Writing complex data retrieval operations against the database using two different methods:
-    * [cite_start]**Formal Relational Algebra:** The theoretical, mathematical foundation of database queries (e.g., for the "FindJob" schema [cite: 33, 49]).
-    * [cite_start]**Practical SQL:** The declarative language used to execute these queries on a live Oracle database[cite: 20].
+    * **Formal Relational Algebra:** The theoretical, mathematical foundation of database queries (e.g., for the "FindJob" schema).
+    * **Practical SQL:** The declarative language used to execute these queries on a live Oracle database.
 
 ---
 
@@ -24,13 +24,13 @@ This project demonstrates the full-cycle implementation of a database, from conc
 The "NCCCloud" database was built from the ground up using SQL Data Definition Language (DDL) and Data Manipulation Language (DML).
 
 * **`NCCCloudData.sql`:** This script contains:
-    * **`CREATE TABLE` (DDL):** Defines all tables for the schema (e.g., `Users`, `Computers`, `Subscription`, `PlaySession`).
-    * **Constraints:** Implements entity and referential integrity using `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, and `CHECK` constraints.
-    * **`INSERT INTO` (DML):** Populates the created tables with a complete, consistent dataset, ready for querying.
+    * **`CREATE TABLE` (DDL):** Defines all tables for the schema (e.g., `Users`, `Computers`, `Subscription`, `PlaySession`).
+    * **Constraints:** Implements entity and referential integrity using `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, and `CHECK` constraints.
+    * **`INSERT INTO` (DML):** Populates the created tables with a complete, consistent dataset, ready for querying.
 
 > **[Image: EER Diagram for the NCCCloud or FindJob schema]**
 >
-> *(**Developer Note:** Place a screenshot of the EER diagram you designed here. It's the best way to show the conceptual model.)*
+> 
 
 ---
 
@@ -42,7 +42,9 @@ The core of this project was translating formal relational logic into executable
 
 Formal relational algebra expressions were developed to solve complex data problems. This demonstrates a theoretical understanding of *how* queries are constructed.
 
-[cite_start]**Example Query:** "List the name, surname, and email of Members who created 'Standard' groups after Jan 1, 2022." [cite: 52]
+
+
+**Example Query:** "List the name, surname, and email of Members who created 'Standard' groups after Jan 1, 2022."
 
 **Formal Algebra:**
 `Π_name, surname, email (σ_type='Standard' AND create_date>'01/01/2022' (Member ⋈_member_id=created_by Group))`
@@ -65,19 +67,22 @@ WHERE T2.type = 'Standard' AND T2.create_date > '01/01/2022';
 ```
 > **[Image: Screenshot of a complex SQL query in Oracle SQL Developer]**
 >
-> [cite_start]*(**Developer Note:** Place a screenshot of one of your complex queries (like Query 5 or 6 from `NCCCloudQueries.sql` ) running in Oracle SQL Developer.)*
+> 
+
+[Image of SQL Inner Join visualization]
+
 
 ---
 
 ## 🛠️ Technology Stack
 
-* [cite_start]**Database:** Oracle Database 21c Express Edition [cite: 17]
+* **Database:** Oracle Database 21c Express Edition
 * **IDE:** Oracle SQL Developer
 * **Languages:** SQL (DDL, DML, Select), Relational Algebra
 
 ## 🚀 How to Run
 
-1.  [cite_start]**Install Oracle:** Download and install Oracle 21c Express Edition[cite: 17].
+1.  **Install Oracle:** Download and install Oracle 21c Express Edition.
 2.  **Connect:** Open Oracle SQL Developer and connect to your local Oracle instance.
 3.  **Create Schema:** Open and run the `NCCCloudData.sql` script. This will create all tables and insert all data. After it finishes, you can verify by running `SELECT * FROM Users;` or `SELECT * FROM Computers;`.
 4.  **Run Queries:** Open the `NCCCloudQueries.sql` script. You can run each query one by one to see the results.
