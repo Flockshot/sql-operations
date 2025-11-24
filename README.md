@@ -28,9 +28,8 @@ The "NCCCloud" database was built from the ground up using SQL Data Definition L
     * **Constraints:** Implements entity and referential integrity using `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, and `CHECK` constraints.
     * **`INSERT INTO` (DML):** Populates the created tables with a complete, consistent dataset, ready for querying.
 
-> **[Image: EER Diagram for the NCCCloud or FindJob schema]**
->
-> 
+![Image: EER Diagram for the NCCCloud schema](.media/ncccloud_eer.png)
+
 
 ---
 
@@ -65,11 +64,24 @@ FROM Member T1
 JOIN "Group" T2 ON T1.member_id = T2.created_by
 WHERE T2.type = 'Standard' AND T2.create_date > '01/01/2022';
 ```
-> **[Image: Screenshot of a complex SQL query in Oracle SQL Developer]**
->
-> 
 
-[Image of SQL Inner Join visualization]
+![Image of SQL Inner Join visualization](.media/inner_join.png)
+
+**Example SQL query**
+```sql
+SELECT name, surname
+FROM Userp u, Game g, PlaySession p, Library l, Computer c
+WHERE game_name='Assassins Creed Valhalla'
+AND p.game_id=g.game_id
+AND p.start_date>TO_DATE('17-10-2022','DD-MM-YYYY')
+AND p.library_connection_token=l.library_connection_token
+AND u.username=l.username
+AND p.computer_id=c.id
+AND gpu='Nvdia RTX 3090';
+```
+
+
+
 
 
 ---
