@@ -14,8 +14,8 @@ This project demonstrates the full-cycle implementation of a database, from conc
 
 1.  **Database Implementation:** Creating a database schema from scratch using SQL DDL, enforcing constraints, and populating it with data (DML). This was done for the "NCCCloud" cloud gaming service.
 2.  **Advanced Querying:** Writing complex data retrieval operations against the database using two different methods:
-    * **Formal Relational Algebra:** The theoretical, mathematical foundation of database queries (e.g., for the "FindJob" schema).
-    * **Practical SQL:** The declarative language used to execute these queries on a live Oracle database.
+    * **Formal Relational Algebra:** The theoretical, mathematical foundation of database queries (e.g., for the "FindJob" schema).
+    * **Practical SQL:** The declarative language used to execute these queries on a live Oracle database.
 
 ---
 
@@ -24,9 +24,9 @@ This project demonstrates the full-cycle implementation of a database, from conc
 The "NCCCloud" database was built from the ground up using SQL Data Definition Language (DDL) and Data Manipulation Language (DML).
 
 * **`NCCCloudData.sql`:** This script contains:
-    * **`CREATE TABLE` (DDL):** Defines all tables for the schema (e.g., `Users`, `Computers`, `Subscription`, `PlaySession`).
-    * **Constraints:** Implements entity and referential integrity using `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, and `CHECK` constraints.
-    * **`INSERT INTO` (DML):** Populates the created tables with a complete, consistent dataset, ready for querying.
+    * **`CREATE TABLE` (DDL):** Defines all tables for the schema (e.g., `Users`, `Computers`, `Subscription`, `PlaySession`).
+    * **Constraints:** Implements entity and referential integrity using `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, and `CHECK` constraints.
+    * **`INSERT INTO` (DML):** Populates the created tables with a complete, consistent dataset, ready for querying.
 
 > **[Image: EER Diagram for the NCCCloud or FindJob schema]**
 >
