@@ -46,7 +46,7 @@ Formal relational algebra expressions were developed to solve complex data probl
 **Example Query:** "List the name, surname, and email of Members who created 'Standard' groups after Jan 1, 2022."
 
 **Formal Algebra:**
-`Π_name, surname, email (σ_type='Standard' AND create_date>'01/01/2022' (Member ⋈_member_id=created_by Group))`
+`Π_name, surname, email (σ_type='Standard' AND create_date>'01/01/2022' (Member ⋈ member_id=created_by Group))`
 
 ### SQL (The "Practice")
 
@@ -61,16 +61,15 @@ The relational algebra expressions were then translated into optimized, practica
 ```sql
 SELECT T1.name, T1.surname, T1.email
 FROM Member T1
-JOIN "Group" T2 ON T1.member_id = T2.created_by
-WHERE T2.type = 'Standard' AND T2.create_date > '01/01/2022';
+JOIN GroupInfo T2 ON T1.member_id = T2.created_by
+WHERE T2.group_type = 'Standard' 
+AND T2.creation_date > TO_DATE('01/01/2022', 'DD/MM/YYYY');
 ```
-
-![Image of SQL Inner Join visualization](.media/inner_join.png)
 
 **Example SQL query**
 ```sql
 SELECT name, surname
-FROM Userp u, Game g, PlaySession p, Library l, Computer c
+FROM User u, Game g, PlaySession p, Library l, Computer c
 WHERE game_name='Assassins Creed Valhalla'
 AND p.game_id=g.game_id
 AND p.start_date>TO_DATE('17-10-2022','DD-MM-YYYY')
